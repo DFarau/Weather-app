@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Conditions from '../Conditions/Conditions';
+import Conditions from './Conditions';
 
-const Forecast = () => {
+const Weather = () => {
 
     let [city, setCity] = useState('');
     let [responseObj, setResponseObj] = useState({});
     let [error, setError] = useState(false);
     let [loading, setLoading] = useState(false);
 
-function getForecast(e) {
+function getWeather(e) {
     e.preventDefault();
 
     if (city.length === 0) {
@@ -50,7 +50,7 @@ function getForecast(e) {
     return (
         <div>
             <h2>Recherchez une ville</h2>
-            <form onSubmit={getForecast}>
+            <form onSubmit={getWeather}>
                 <input
                     type="text"
                     className="form-control mt-4"
@@ -69,5 +69,5 @@ function getForecast(e) {
     )
 }
 
-export default Forecast;
+export default Weather;
 
